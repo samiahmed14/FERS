@@ -1,0 +1,171 @@
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Predictor</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div id="tsparticles" >
+
+      <div class="container  align-items-center  " >
+        <div class="row  " style=" position: absolute; ">
+          <center><h2>Emotional State Detection</h2></center>
+
+  
+          <div class="card card-body " style="border: 1px solid black; background-color:rgb(8, 154, 238)">
+  
+            <div class="col-lg-8  offset-lg-2">      
+              <form method="post" action="{{ url_for('tasks') }}">
+                <input type="submit" value="Stop/Start" name="stop" />
+                <input type="submit" value="Capture" name="click"/>
+                <input type="submit" value="Start/Stop Recording" name="rec" />
+                <div class="card card-body " style="border: 1px solid black; background-color:rgb(8, 154, 238)">
+
+                      <img src="{{ url_for('video_feed') }}" height="80%">
+                </div> 
+                <br>
+              
+                <input  type="submit " class="col-md-12 btn btn-success"  value="Detect" name="face">
+              <br>
+            </div>
+          </div>   
+          
+              
+        </form>
+
+
+        </div>  
+
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.1/tsparticles.min.js"
+        integrity="sha512-PYHWDEuXOTJ9MZ+/QHqkbgiEYZ+LImQv3i/9NyYOABFvK37e4q4Wg7aQDN1JpoGiEu1TYZh6JMrZluZox2gbDA=="
+        crossorigin="anonymous"
+></script>
+<script>
+    tsParticles.load('tsparticles');
+  </script>
+    <script>
+        const particles = {
+            backgroundMask: {
+        composite: "destination-out",
+        cover: { color: { value: "#fff" }, opacity: 0.2 },
+        enable: false,
+      },
+      fullScreen: { enable: true, zIndex: 1 },
+            fpsLimit: 60,
+      particles: {
+        color: {
+          value: "#ffffff",
+        },
+        links: {
+          blink: false,
+          color: { value: "#ffffff" },
+          consent: false,
+          distance: 150,
+          enable: true,
+          frequency: 1,
+          opacity: 1,
+          shadow: { blur: 5, color: { value: "#000000" }, enable: true },
+          triangles: { enable: false, frequency: 1 },
+          width: 1,
+          warp: false,
+        },
+        move: {
+          angle: { offset: 0, value: 90 },
+          attract: {
+            distance: 200,
+            enable: false,
+            rotate: { x: 606, y: 1185 },
+          },
+          center: { x: 50, y: 50, radius: 0 },
+          decay: 0,
+          distance: {},
+          direction: "none",
+          drift: 0,
+          enable: true,
+          gravity: {
+            acceleration: 9.81,
+            enable: false,
+            inverse: false,
+            maxSpeed: 50,
+          },
+          path: {
+            clamp: true,
+            delay: { random: { enable: false, minimumValue: 0 }, value: 0 },
+            enable: false,
+            options: {},
+          },
+          outModes: {
+            default: "out",
+            bottom: "out",
+            left: "out",
+            right: "out",
+            top: "out",
+          },
+          random: false,
+          size: false,
+          speed: 2,
+          spin: { acceleration: 0, enable: false },
+          straight: false,
+          trail: { enable: false, length: 10, fillColor: { value: "#000000" } },
+          vibrate: false,
+          warp: false,
+        },
+        number: {
+          density: {
+            enable: true,
+            value_area: 1000,
+          },
+          value: 100,
+        },
+        opacity: {
+          value: 1,
+          random: false,
+          anim: {
+            enable: false,
+          },
+        },
+        shape: {
+          type: "circle",
+        },
+        size: {
+          random: false,
+          value: 5,
+        },
+      },
+      retina_detect: true,
+          "background": {
+            "image": "",
+            "width": 100,
+        "height": 300,
+            "color": "#31e6ff",
+            "position": "50% 50%",
+            "repeat": "no-repeat",
+            "size": "cover",
+        "opacity": 0.5,
+          }
+        };
+      
+        tsParticles.load('tsparticles');
+        tsParticles.load('tsparticles', particles);
+
+      </script>
+</html>
